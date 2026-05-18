@@ -14,4 +14,7 @@ class STANKBUSTERS_API AMurcusPlayerCharacter : public ABaseStankCharacter
 {
 	GENERATED_BODY()
 	
+public:
+	AMurcusPlayerCharacter();
+
 };
