@@ -17,18 +17,3 @@ void ABaseStankCharacter::BeginPlay()
 	Super::BeginPlay();
 	
 }
-
-// Called every frame
-void ABaseStankCharacter::Tick(float DeltaTime)
-{
-	Super::Tick(DeltaTime);
-
-}
-
-// Called to bind functionality to input
-void ABaseStankCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
-{
-	Super::SetupPlayerInputComponent(PlayerInputComponent);
-
-}
-
