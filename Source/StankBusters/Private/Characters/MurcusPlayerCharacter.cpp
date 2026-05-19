@@ -3,6 +3,9 @@
 
 #include "Characters/MurcusPlayerCharacter.h"
 #include "GameFramework/CharacterMovementComponent.h"
+#include "Player/MurcusPlayerState.h"
+#include "AbilitySystem/StankAbilitySystemComponent.h"
+
 AMurcusPlayerCharacter::AMurcusPlayerCharacter()
 {
 
@@ -15,4 +18,20 @@ AMurcusPlayerCharacter::AMurcusPlayerCharacter()
 	bUseControllerRotationRoll = false;
 	bUseControllerRotationYaw = false;
 
+}
+
+void AMurcusPlayerCharacter::PossessedBy(AController* NewController)
+{
+	Super::PossessedBy(NewController);
+	InitAbilityActorInfo();
+
+}
+
+void AMurcusPlayerCharacter::InitAbilityActorInfo()
+{
+	AMurcusPlayerState* MurcusPlayerState = GetPlayerState<AMurcusPlayerState>();
+	check(MurcusPlayerState);
+	MurcusPlayerState->GetAbilitySystemComponent()->InitAbilityActorInfo(MurcusPlayerState, this);
+	AbilitySystemComponent = MurcusPlayerState->GetAbilitySystemComponent();
+	AttributeSet = MurcusPlayerState->GetAttributeSet();
 }

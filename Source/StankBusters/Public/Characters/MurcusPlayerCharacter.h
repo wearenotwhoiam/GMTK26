@@ -16,5 +16,7 @@ class STANKBUSTERS_API AMurcusPlayerCharacter : public ABaseStankCharacter
 	
 public:
 	AMurcusPlayerCharacter();
-
+	virtual void PossessedBy(AController* NewController) override;
+private:
+	void InitAbilityActorInfo();
 };
