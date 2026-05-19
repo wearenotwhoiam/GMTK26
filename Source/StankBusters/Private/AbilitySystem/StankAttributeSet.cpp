@@ -5,6 +5,6 @@
 
 UStankAttributeSet::UStankAttributeSet()
 {
-	//InitCurrentMucus(100.f);
+	InitCurrentMucus(100.f);
+	InitMaxMucus(250.f);
 }
-
